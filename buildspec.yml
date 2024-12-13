@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+  build:
+    commands:
+      - echo "Zipping repository files..."
+      - zip -r Code-Deploy-v2.zip .
+  post_build:
+    commands:
+      - echo "Uploading zip to S3..."
+      - aws s3 cp Code-Deploy-v2.zip s3://codedeploy-s3-backend/demo-deploy-code/Code-Deploy-v2.zip
