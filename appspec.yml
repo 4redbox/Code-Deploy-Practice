@@ -8,6 +8,9 @@ hooks:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
+    - location: scripts/setup_service.sh
+      timeout: 300
+      runas: root      
     - location: scripts/start_server.sh
       timeout: 300
       runas: ubuntu
