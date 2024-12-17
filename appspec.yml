@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /var/www/myapp
+    overwrite: true
 hooks:
   AfterInstall:
     - location: scripts/install_dependencies.sh
